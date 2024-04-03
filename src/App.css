@@ -6,6 +6,14 @@
 }
 
 
-.todo-list, .filter-list {
+.todo-list-container, .filter-list {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  background-image: url(./assets/images/bg-mobile-light.jpg);
+}
+
+li {
+  border-bottom: 1px solid gray;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import iconMoon from "./assets/images/icon-moon.svg";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
@@ -126,10 +127,10 @@ function App() {
     <DndProvider backend={HTML5Backend}>
       <div className={`app ${theme}`}>
         <div className="container">
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between header">
             <h1 className="text-center my-4">Todo</h1>
             <button className="theme-button" onClick={toggleTheme}>
-              Toggle Theme
+              <img src={iconMoon} />
             </button>
           </div>
           <div className="d-flex mb-3 filter-list">
@@ -144,7 +145,7 @@ function App() {
               placeholder="Create a new todo..."
             />
           </div>
-          <div className="container">
+          <div className="todo-list-container container my-5">
             <ul className="todo-list">
               {filteredTodos.map((todo, index) => (
                 <Todo
