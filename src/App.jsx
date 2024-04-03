@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import iconMoon from "./assets/images/icon-moon.svg";
+import iconCross from "./assets/images/icon-cross.svg";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
@@ -67,7 +68,7 @@ const Todo = ({ todo, index, toggleTodo, deleteTodo, moveTodo }) => {
         </span>
       </div>
       <button className="todo-delete" onClick={() => deleteTodo(todo.id)}>
-        Delete
+        <img src={iconCross} />
       </button>
     </li>
   );
@@ -125,8 +126,8 @@ function App() {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className={`app ${theme}`}>
-        <div className="container">
+      <div className={`app ${theme} container`}>
+        <div className="">
           <div className="d-flex justify-content-between header">
             <h1 className="text-center my-4">Todo</h1>
             <button className="theme-button" onClick={toggleTheme}>
@@ -158,10 +159,12 @@ function App() {
                 />
               ))}
             </ul>
-            <p>{activeTodosCount} items left</p>
+            <div className="d-flex justify-content-between align-items-start">
+            <p className="items-left">{activeTodosCount} items left</p>
             <button className="clear-button" onClick={clearCompletedTodos}>
               Clear Completed
             </button>
+            </div>
           </div>
           <div className="d-flex justify-content-center mb-3 filter-list">
             <button
@@ -186,6 +189,7 @@ function App() {
             </button>
           </div>
         </div>
+        <div className="footer">Drag and drop to reorder list</div>
       </div>
     </DndProvider>
   );

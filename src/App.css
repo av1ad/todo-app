@@ -1,19 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 #root {
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue: hsl(233, 11%, 84%);
+  --dark-grayish-blue: hsl(236, 9%, 61%);
+  --very-dark-grayish-blue: hsl(235, 19%, 35%);
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --light-grayish-blue: hsl(234, 39%, 85%);
+  --light-grayish-blue: hsl(236, 33%, 92%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+  --very-dark-grayish-blue: hsl(233, 14%, 35%);
+  --very-dark-grayish-blue: hsl(237, 14%, 26%);
+  font-family: "Josefin Sans", sans-serif;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
-
-.todo-list-container, .filter-list {
+.todo-list-container,
+.filter-list {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.header {
+body {
   background-image: url(./assets/images/bg-mobile-light.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  margin: 0;
+}
+.header {
 }
 
 li {
+  list-style: none;
   border-bottom: 1px solid gray;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: 7px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.todo-input {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.todo-button {
+  background-color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #6a5acd;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.todo-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.todo-text {
+  flex-grow: 1;
+  margin-left: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-delete {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.filter-button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: gray;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.filter-button.active {
+  color: #6a5acd;
+}
+
+.clear-button,
+.theme-button,
+.items-left {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  font-size: 14px;
+  color: gray;
+  cursor: pointer;
+}
+
+.clear-button:hover {
+  color: #6a5acd;
+}
+
+.clear-button {
+  margin-right: 10px;
+}
+
+.theme-button {
+  background-color: rgba(255, 255, 255, 0);
 }
